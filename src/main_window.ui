@@ -51,30 +51,30 @@
              <string>Refresh remotes view</string>
             </property>
             <property name="text">
-             <string>Refresh</string>
+             <string>&amp;Refresh</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="config">
             <property name="text">
-             <string>Config</string>
+             <string>&amp;Config</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="open">
             <property name="text">
-             <string>Open</string>
+             <string>&amp;Open</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -110,10 +110,10 @@
              <string>Rclone Browser preferences</string>
             </property>
             <property name="text">
-             <string>Prefs</string>
+             <string>&amp;Prefs</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -166,20 +166,20 @@
           <item>
            <widget class="QToolButton" name="buttonStopAllJobs">
             <property name="text">
-             <string>Stop</string>
+             <string>&amp;Stop</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="buttonCleanNotRunning">
             <property name="text">
-             <string>Clean</string>
+             <string>&amp;Clean</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -208,10 +208,10 @@
              <string>Sort by start time</string>
             </property>
             <property name="text">
-             <string>Sort</string>
+             <string>&amp;Sort</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -224,10 +224,10 @@
              <string>Sort by status</string>
             </property>
             <property name="text">
-             <string>Sort</string>
+             <string>&amp;Sort</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -339,20 +339,20 @@
           <item>
            <widget class="QToolButton" name="buttonDryrunTask">
             <property name="text">
-             <string>Dry Run</string>
+             <string>&amp;Dry Run</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="buttonRunTask">
             <property name="text">
-             <string>Run</string>
+             <string>&amp;Run</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -362,10 +362,10 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt;&quot;&gt;Stop all selected tasks&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
-             <string>Stop</string>
+             <string>&amp;Stop</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -388,20 +388,20 @@
           <item>
            <widget class="QToolButton" name="buttonEditTask">
             <property name="text">
-             <string>Edit</string>
+             <string>&amp;Edit</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="buttonDeleteTask">
             <property name="text">
-             <string>Delete</string>
+             <string>&amp;Delete</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -430,10 +430,10 @@
              <string>Add selected transfer tasks to the queue</string>
             </property>
             <property name="text">
-             <string>Add</string>
+             <string>&amp;Add</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -446,10 +446,10 @@
              <string>Add selected transfer tasks to the scheduler</string>
             </property>
             <property name="text">
-             <string>Add</string>
+             <string>&amp;Add</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -459,13 +459,13 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sort tasks&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
-             <string>Sort</string>
+             <string>&amp;Sort</string>
             </property>
             <property name="checked">
              <bool>false</bool>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -547,20 +547,20 @@
           <item>
            <widget class="QToolButton" name="buttonStartQueue">
             <property name="text">
-             <string>Start</string>
+             <string>&amp;Start</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="buttonStopQueue">
             <property name="text">
-             <string>Stop</string>
+             <string>&amp;Stop</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -583,20 +583,20 @@
           <item>
            <widget class="QToolButton" name="buttonUpQueue">
             <property name="text">
-             <string>Up</string>
+             <string>&amp;Up</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="buttonDownQueue">
             <property name="text">
-             <string>Down</string>
+             <string>&amp;Down</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -619,20 +619,20 @@
           <item>
            <widget class="QToolButton" name="buttonRemoveFromQueue">
             <property name="text">
-             <string>Delete</string>
+             <string>&amp;Delete</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="buttonPurgeQueue">
             <property name="text">
-             <string>Purge</string>
+             <string>&amp;Purge</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -753,10 +753,10 @@
              <string>Start scheduler</string>
             </property>
             <property name="text">
-             <string>Start</string>
+             <string>&amp;Start</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -769,10 +769,10 @@
              <string>Stop scheduler</string>
             </property>
             <property name="text">
-             <string>Stop</string>
+             <string>&amp;Stop</string>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>

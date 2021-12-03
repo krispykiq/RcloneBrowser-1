@@ -85,21 +85,27 @@ MountWidget::MountWidget(QProcess *process, const QString &remote,
     img_add = "_inv";
   }
 
-  ui.showDetails->setIcon(
-      QIcon(":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
-  ui.showDetails->setIconSize(QSize(24, 24));
-  ui.showOutput->setIcon(
-      QIcon(":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
-  ui.showOutput->setIconSize(QSize(24, 24));
+  // ui.showDetails->setIcon(
+  //     QIcon(":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
+  // ui.showDetails->setIconSize(QSize(24, 24));
+  // ui.showOutput->setIcon(
+  //     QIcon(":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
+  // ui.showOutput->setIconSize(QSize(24, 24));
 
-  ui.showScriptOutput->setIcon(
-      QIcon(":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
-  ui.showScriptOutput->setIconSize(QSize(24, 24));
+  // ui.showScriptOutput->setIcon(
+  //     QIcon(":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
+  // ui.showScriptOutput->setIconSize(QSize(24, 24));
 
-  ui.cancel->setIcon(
-      QIcon(":media/images/qbutton_icons/cancel" + img_add + ".png"));
-  ui.cancel->setIconSize(QSize(24, 24));
+  // ui.cancel->setIcon(
+  //     QIcon(":media/images/qbutton_icons/cancel" + img_add + ".png"));
+  // ui.cancel->setIconSize(QSize(24, 24));
 
+  ui.showDetails->setArrowType(Qt::RightArrow);
+  ui.showOutput->setArrowType(Qt::RightArrow);
+  ui.showScriptOutput->setArrowType(Qt::RightArrow);
+
+  QStyle *style = QApplication::style();
+  ui.cancel->setIcon(style->standardIcon(QStyle::SP_DialogCloseButton));
   ui.copy->setIcon(
       QIcon(":media/images/qbutton_icons/copy" + img_add + ".png"));
   ui.copy->setIconSize(QSize(24, 24));
@@ -113,15 +119,16 @@ MountWidget::MountWidget(QProcess *process, const QString &remote,
   QObject::connect(
       ui.showDetails, &QToolButton::toggled, this, [=](bool checked) {
         ui.details->setVisible(checked);
-        if (checked) {
-          ui.showDetails->setIcon(QIcon(
-              ":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
-          ui.showDetails->setIconSize(QSize(24, 24));
-        } else {
-          ui.showDetails->setIcon(QIcon(
-              ":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
-          ui.showDetails->setIconSize(QSize(24, 24));
-        }
+        ui.showDetails->setArrowType(checked ? Qt::DownArrow : Qt::RightArrow);
+//         if (checked) {
+//           ui.showDetails->setIcon(QIcon(
+//               ":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
+//           ui.showDetails->setIconSize(QSize(24, 24));
+//         } else {
+//           ui.showDetails->setIcon(QIcon(
+//               ":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
+//           ui.showDetails->setIconSize(QSize(24, 24));
+//         }
       });
 
   QObject::connect(mScriptProcess, &QProcess::readyRead, this, [=]() {
@@ -188,31 +195,34 @@ MountWidget::MountWidget(QProcess *process, const QString &remote,
         ui.sOutput->setVisible(checked);
         ui.l_script->setVisible(checked);
 
-        if (checked) {
-          ui.showScriptOutput->setIcon(QIcon(
-              ":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
-          ui.showScriptOutput->setIconSize(QSize(24, 24));
-        } else {
-          ui.showScriptOutput->setIcon(QIcon(
-              ":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
-          ui.showScriptOutput->setIconSize(QSize(24, 24));
-        }
+        ui.showScriptOutput->setArrowType(checked ? Qt::DownArrow : Qt::RightArrow);
+
+//         if (checked) {
+//           ui.showScriptOutput->setIcon(QIcon(
+//               ":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
+//           ui.showScriptOutput->setIconSize(QSize(24, 24));
+//         } else {
+//           ui.showScriptOutput->setIcon(QIcon(
+//               ":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
+//           ui.showScriptOutput->setIconSize(QSize(24, 24));
+//         }
       });
 
   QObject::connect(
       ui.showOutput, &QToolButton::toggled, this, [=](bool checked) {
         ui.output->setVisible(checked);
         // ui.l_rclone->setVisible(checked);
+        ui.showOutput->setArrowType(checked ? Qt::DownArrow : Qt::RightArrow);
 
-        if (checked) {
-          ui.showOutput->setIcon(QIcon(
-              ":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
-          ui.showOutput->setIconSize(QSize(24, 24));
-        } else {
-          ui.showOutput->setIcon(QIcon(
-              ":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
-          ui.showOutput->setIconSize(QSize(24, 24));
-        }
+//         if (checked) {
+//           ui.showOutput->setIcon(QIcon(
+//               ":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
+//           ui.showOutput->setIconSize(QSize(24, 24));
+//         } else {
+//           ui.showOutput->setIcon(QIcon(
+//               ":media/images/qbutton_icons/vrightarrow" + img_add + ".png"));
+//           ui.showOutput->setIconSize(QSize(24, 24));
+//         }
       });
 
   QObject::connect(ui.cancel, &QToolButton::clicked, this, [=]() {
