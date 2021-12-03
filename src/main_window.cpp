@@ -471,7 +471,7 @@ MainWindow::MainWindow() {
             QIcon(":media/images/qbutton_icons/addtoscheduler" + img_add + ".png"));
 
         ui.actionStartQueue->setIcon(style->standardIcon(QStyle::SP_ArrowForward));
-        ui.actionStopQueue-setIcon(style->standardIcon(QStyle::SP_MediaStop));
+        ui.actionStopQueue->setIcon(style->standardIcon(QStyle::SP_MediaStop));
         ui.actionPurgeQueue->setIcon(style->standardIcon(QStyle::SP_DialogDiscardButton));
         ui.actionRemoveFromQueue->setIcon(style->standardIcon(QStyle::SP_DialogCancelButton));
         ui.actionUpQueue->setIcon(style->standardIcon(QStyle::SP_ArrowUp));
