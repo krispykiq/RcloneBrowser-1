@@ -835,6 +835,31 @@ void MainWindow::rcloneListRemotes() {
               darkModeIconScale = 2;
             }
 
+            if (iconSize == "M") {
+              lightModeiconScale = 4;
+              darkModeIconScale = 2.666;
+            }
+
+            if (iconSize == "L") {
+              lightModeiconScale = 6;
+              darkModeIconScale = 4;
+            }
+
+            if (iconSize == "XL") {
+              lightModeiconScale = 8;
+              darkModeIconScale = 5.333;
+            }
+
+            if (iconSize == "XXL") {
+              lightModeiconScale = 15;
+              darkModeIconScale = 10;
+            }
+
+            if (iconSize == "XXXL") {
+              lightModeiconScale = 18;
+              darkModeIconScale = 15;
+            }
+            
 #if !defined(Q_OS_MACOS)
             // _inv only for dark mode
             // we use darkModeIni to apply mode active at startup

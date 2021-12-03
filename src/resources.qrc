@@ -39,5 +39,43 @@
     <file>images/yandex_inv.png</file>
     <file>images/azureblob_inv.png</file>
     <file>images/google_photos_inv.png</file>
+    <file>images/alias.png</file>
+    <file>images/alias_inv.png</file>
+    <file>images/box.png</file>
+    <file>images/box_inv.png</file>
+    <file>images/cache.png</file>
+    <file>images/cache_inv.png</file>
+    <file>images/chunker.png</file>
+    <file>images/chunker_inv.png</file>
+    <file>images/fichier.png</file>
+    <file>images/fichier_inv.png</file>
+    <file>images/http.png</file>
+    <file>images/http_inv.png</file>
+    <file>images/jottacloud.png</file>
+    <file>images/jottacloud_inv.png</file>
+    <file>images/koofr.png</file>
+    <file>images/koofr_inv.png</file>
+    <file>images/mailru.png</file>
+    <file>images/mailru_inv.png</file>
+    <file>images/memory.png</file>
+    <file>images/memory_inv.png</file>
+    <file>images/opendrive.png</file>
+    <file>images/opendrive_inv.png</file>
+    <file>images/pcloud.png</file>
+    <file>images/pcloud_inv.png</file>
+    <file>images/premiumizeme.png</file>
+    <file>images/premiumizeme_inv.png</file>
+    <file>images/putio.png</file>
+    <file>images/putio_inv.png</file>
+    <file>images/qingstor.png</file>
+    <file>images/qingstor_inv.png</file>
+    <file>images/sharefile.png</file>
+    <file>images/sharefile_inv.png</file>
+    <file>images/sugarsync.png</file>
+    <file>images/sugarsync_inv.png</file>
+    <file>images/union.png</file>
+    <file>images/union_inv.png</file>
+    <file>images/webdav.png</file>
+    <file>images/webdav_inv.png</file>
   </qresource>
 </RCC>

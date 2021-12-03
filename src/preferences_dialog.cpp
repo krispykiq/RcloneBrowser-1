@@ -141,8 +141,28 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) : QDialog(parent) {
   } else {
     if (settings->value("Settings/iconSize").toString() == "large") {
       ui.cb_large->setChecked(true);
-    } else {
-      ui.cb_medium->setChecked(true);
+	  } else {
+	    if (settings->value("Settings/iconSize").toString() == "M") {
+	      ui.cb_sm->setChecked(true);
+	    } else {
+    	  if ((settings->value("Settings/iconSize").toString()) == "L") {
+		      ui.cb_sl->setChecked(true);
+        } else {
+          if ((settings->value("Settings/iconSize").toString()) == "XL") {
+            ui.cb_sxl->setChecked(true);
+          } else {
+            if ((settings->value("Settings/iconSize").toString()) == "XXL") {
+              ui.cb_sxxl->setChecked(true);
+            } else {
+              if ((settings->value("Settings/iconSize").toString()) == "XXXL") {
+                ui.cb_sxxxl->setChecked(true);
+              } else {
+                  ui.cb_medium->setChecked(true);
+					    }
+					  }
+				  }
+			  }
+		  }
     }
   }
 
@@ -243,7 +263,27 @@ QString PreferencesDialog::getIconSize() const {
     if (ui.cb_large->isChecked()) {
       return "large";
     } else {
-      return "medium";
+	  if (ui.cb_sm->isChecked()) {
+	    return "M";
+	    } else {
+		  if (ui.cb_sl->isChecked()) {
+		    return "L";
+		    } else {
+			  if (ui.cb_sxl->isChecked()) {
+			    return "XL";
+			    } else {
+				  if (ui.cb_sxxl->isChecked()) {
+				    return "XXL";
+				    } else {
+					  if (ui.cb_sxxxl->isChecked()) {
+					    return "XXXL";
+					    } else {
+					        return "medium";
+					    }
+					  }
+				  }
+			  }
+		  }
     }
   }
 }

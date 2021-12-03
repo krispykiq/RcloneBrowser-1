@@ -524,6 +524,56 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="cb_sm">
+            <property name="text">
+             <string>M</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="cb_sl">
+            <property name="text">
+             <string>L</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="cb_sxl">
+            <property name="text">
+             <string>XL</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+		  <item>
+           <widget class="QCheckBox" name="cb_sxxl">
+            <property name="text">
+             <string>XXL</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="cb_sxxxl">
+            <property name="text">
+             <string>XXXL</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -750,6 +800,11 @@
   <tabstop>cb_small</tabstop>
   <tabstop>cb_medium</tabstop>
   <tabstop>cb_large</tabstop>
+  <tabstop>cb_sm</tabstop>
+  <tabstop>cb_sl</tabstop>
+  <tabstop>cb_sxl</tabstop>
+  <tabstop>cb_sxxl</tabstop>
+  <tabstop>cb_sxxxl</tabstop>
   <tabstop>useSystemSettings</tabstop>
   <tabstop>useProxy</tabstop>
   <tabstop>http_proxy</tabstop>
