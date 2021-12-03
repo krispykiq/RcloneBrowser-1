@@ -344,6 +344,10 @@ QString root = isLocal ? "/" : QString();
       settings->setValue("Settings/streamConfirmed", true);
     }
 
+    QFileInfo fi(path);
+    QString filename = fi.fileName();
+    stream.replace("$file_name",filename);
+    
     emit addStream(remote + ":" + path, stream);
   });
 
