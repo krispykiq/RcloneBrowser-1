@@ -2995,6 +2995,21 @@ void MainWindow::rcloneListRemotes() {
               darkModeIconScale = 10;
             }
 
+            if (iconSize == "Small") {
+              lightModeiconScale = 1.5;
+              darkModeIconScale = 1;
+            }
+
+            if (iconSize == "Medium") {
+              lightModeiconScale = 2;
+              darkModeIconScale = 1.333;
+            }
+
+            if (iconSize == "Large") {
+              lightModeiconScale = 3;
+              darkModeIconScale = 2;
+            }
+            
             // disable scaling - all is fusion now
             // let's leave scaling logic for now
             darkModeIconScale = lightModeiconScale;

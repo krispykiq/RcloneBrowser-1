@@ -386,7 +386,19 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) : QDialog(parent) {
         if (settings->value("Settings/iconSize").toString() == "XXL") {
           ui.cb_remote_xxl->setChecked(true);
         } else {
-          ui.cb_remote_m->setChecked(true);
+          if ((settings->value("Settings/iconSize").toString()) == "Small") {
+            ui.cb_remote_small->setChecked(true);
+          } else {
+            if ((settings->value("Settings/iconSize").toString()) == "Medium") {
+              ui.cb_remote_medium->setChecked(true);
+            } else {
+              if ((settings->value("Settings/iconSize").toString()) == "Large") {
+                ui.cb_remote_large->setChecked(true);
+              } else {
+                  ui.cb_remote_m->setChecked(true);
+              }
+            }
+          }
         }
       }
     }
@@ -647,7 +659,19 @@ QString PreferencesDialog::getIconSize() const {
         if (ui.cb_remote_xxl->isChecked()) {
           return "XXL";
         } else {
-          return "M";
+          if (ui.cb_remote_small->isChecked()) {
+            return "Small";
+          } else {
+            if (ui.cb_remote_medium->isChecked()) {
+              return "Medium";
+            } else {
+              if (ui.cb_remote_large->isChecked()) {
+                return "Large";
+              } else {
+                  return "M";
+              }
+            }
+          }
         }
       }
     }
