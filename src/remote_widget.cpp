@@ -286,45 +286,42 @@ RemoteWidget::RemoteWidget(IconCache *iconCache, const QString &remote,
         ui.buttonSize->setDefaultAction(ui.getSize);
         ui.buttonExport->setDefaultAction(ui.export_);
       } else {
-          // button style - icononly
-          ui.refresh->setIcon(
-              QIcon(":media/images/qbutton_icons/refresh" + img_add + ".png"));
-          ui.mkdir->setIcon(
-              QIcon(":media/images/qbutton_icons/mkdir" + img_add + ".png"));
-          ui.rename->setIcon(
-              QIcon(":media/images/qbutton_icons/rename" + img_add + ".png"));
-          ui.move->setIcon(
-              QIcon(":media/images/qbutton_icons/move" + img_add + ".png"));
+        if (buttonStyle == "icononly2") {
           ui.copy->setIcon(
-              QIcon(":media/images/qbutton_icons/copy" + img_add + ".png"));
-          ui.purge->setIcon(
-              QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
-          ui.actionNewMount->setIcon(
-              QIcon(":media/images/qbutton_icons/mount" + img_add + ".png"));
+              QIcon(":media/images/qbutton_icons/copy" + "_v2" + ".png"));
+          ui.move->setIcon(
+              QIcon(":media/images/qbutton_icons/move" + "_v2" + ".png")); 
+          ui.rename->setIcon(
+              QIcon(":media/images/qbutton_icons/rename" + "_v2" +".png")); 
           ui.stream->setIcon(
-              QIcon(":media/images/qbutton_icons/stream" + img_add + ".png"));
-          ui.upload->setIcon(
-              QIcon(":media/images/qbutton_icons/upload" + img_add + ".png"));
-          ui.download->setIcon(
-              QIcon(":media/images/qbutton_icons/download" + img_add + ".png"));
-          ui.actionCheck->setIcon(
-              QIcon(":media/images/qbutton_icons/check" + img_add + ".png"));
-          ui.getSize->setIcon(
-              QIcon(":media/images/qbutton_icons/getsize" + img_add + ".png"));
-          ui.getTree->setIcon(
-              QIcon(":media/images/qbutton_icons/gettree" + img_add + ".png"));
-          ui.link->setIcon(
-              QIcon(":media/images/qbutton_icons/link" + img_add + ".png"));
-          ui.export_->setIcon(
-              QIcon(":media/images/qbutton_icons/export" + img_add + ".png"));
-          ui.buttonTools->setIcon(
-              QIcon(":media/images/qbutton_icons/tools" + img_add + ".png"));
-          ui.getInfo->setIcon(
-              QIcon(":media/images/qbutton_icons/info" + img_add + ".png"));
-          ui.actionDedupe->setIcon(
-              QIcon(":media/images/qbutton_icons/dedupe" + img_add + ".png"));
-          ui.cleanup->setIcon(
-              QIcon(":media/images/qbutton_icons/cleanup" + img_add + ".png"));
+              QIcon(":media/images/qbutton_icons/stream" + "_v2" + ".png")); 
+              
+          QStyle *style = QApplication::style();
+          ui.refresh->setIcon(style->standardIcon(QStyle::SP_BrowserReload));
+          ui.mkdir->setIcon(style->standardIcon(QStyle::SP_FileDialogNewFolder));
+          ui.purge->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
+          ui.actionNewMount->setIcon(style->standardIcon(QStyle::SP_DriveNetIcon));
+          ui.upload->setIcon(style->standardIcon(QStyle::SP_ArrowUp));
+          ui.download->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
+          ui.download->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
+          ui.getSize->setIcon(style->standardIcon(QStyle::SP_FileDialogInfoView));
+          ui.getTree->setIcon(style->standardIcon(QStyle::SP_FileDialogListView));
+          ui.export_->setIcon(style->standardIcon(QStyle::SP_FileDialogDetailedView));
+          ui.link->setIcon(style->standardIcon(QStyle::SP_FileLinkIcon));
+
+          ui.buttonRefresh->setDefaultAction(ui.refresh);
+          ui.buttonMkdir->setDefaultAction(ui.mkdir);
+          ui.buttonRename->setDefaultAction(ui.rename);
+          ui.buttonMove->setDefaultAction(ui.move);
+          ui.buttonPurge->setDefaultAction(ui.purge);
+          ui.buttonMount->setDefaultAction(ui.actionNewMount);
+          ui.buttonStream->setDefaultAction(ui.stream);
+          ui.buttonUpload->setDefaultAction(ui.upload);
+          ui.buttonDownload->setDefaultAction(ui.download);
+          ui.buttonTree->setDefaultAction(ui.getTree);
+          ui.buttonLink->setDefaultAction(ui.link);
+          ui.buttonSize->setDefaultAction(ui.getSize);
+          ui.buttonExport->setDefaultAction(ui.export_);
 
           ui.buttonRefresh->setToolButtonStyle(Qt::ToolButtonIconOnly);
           ui.buttonRefresh->setIconSize(QSize(icon_w, icon_h));
@@ -362,6 +359,84 @@ RemoteWidget::RemoteWidget(IconCache *iconCache, const QString &remote,
           ui.buttonDedupe->setIconSize(QSize(icon_w, icon_h));
           ui.buttonCopy->setToolButtonStyle(Qt::ToolButtonIconOnly);
           ui.buttonCopy->setIconSize(QSize(icon_w, icon_h));
+
+        } else {
+            // button style - icononly
+            ui.refresh->setIcon(
+                QIcon(":media/images/qbutton_icons/refresh" + img_add + ".png"));
+            ui.mkdir->setIcon(
+                QIcon(":media/images/qbutton_icons/mkdir" + img_add + ".png"));
+            ui.rename->setIcon(
+                QIcon(":media/images/qbutton_icons/rename" + img_add + ".png"));
+            ui.move->setIcon(
+                QIcon(":media/images/qbutton_icons/move" + img_add + ".png"));
+            ui.copy->setIcon(
+                QIcon(":media/images/qbutton_icons/copy" + img_add + ".png"));
+            ui.purge->setIcon(
+                QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
+            ui.actionNewMount->setIcon(
+                QIcon(":media/images/qbutton_icons/mount" + img_add + ".png"));
+            ui.stream->setIcon(
+                QIcon(":media/images/qbutton_icons/stream" + img_add + ".png"));
+            ui.upload->setIcon(
+                QIcon(":media/images/qbutton_icons/upload" + img_add + ".png"));
+            ui.download->setIcon(
+                QIcon(":media/images/qbutton_icons/download" + img_add + ".png"));
+            ui.actionCheck->setIcon(
+                QIcon(":media/images/qbutton_icons/check" + img_add + ".png"));
+            ui.getSize->setIcon(
+                QIcon(":media/images/qbutton_icons/getsize" + img_add + ".png"));
+            ui.getTree->setIcon(
+                QIcon(":media/images/qbutton_icons/gettree" + img_add + ".png"));
+            ui.link->setIcon(
+                QIcon(":media/images/qbutton_icons/link" + img_add + ".png"));
+            ui.export_->setIcon(
+                QIcon(":media/images/qbutton_icons/export" + img_add + ".png"));
+            ui.buttonTools->setIcon(
+                QIcon(":media/images/qbutton_icons/tools" + img_add + ".png"));
+            ui.getInfo->setIcon(
+                QIcon(":media/images/qbutton_icons/info" + img_add + ".png"));
+            ui.actionDedupe->setIcon(
+                QIcon(":media/images/qbutton_icons/dedupe" + img_add + ".png"));
+            ui.cleanup->setIcon(
+                QIcon(":media/images/qbutton_icons/cleanup" + img_add + ".png"));
+
+            ui.buttonRefresh->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonRefresh->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonMkdir->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonMkdir->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonRename->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonRename->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonMove->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonMove->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonPurge->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonPurge->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonMount->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonMount->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStream->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStream->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonUpload->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonUpload->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonDownload->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonDownload->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonSize->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonSize->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonTree->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonTree->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonLink->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonLink->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonExport->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonExport->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonCheck->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonCheck->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonInfo->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonInfo->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonTools->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonTools->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonDedupe->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonDedupe->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonCopy->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonCopy->setIconSize(QSize(icon_w, icon_h));
       }
     }
   }

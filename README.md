@@ -270,6 +270,14 @@ If you would like to donate towards code signing keys please feel free to [do it
 
 Raised so far: 7.82 USD (1.6% of the required target)
 
+Attributions
+---------------------------
+Some icons used were taken from:
+*   [Freepik](https://www.freepik.com/) from [www.flaticon.com](https://www.flaticon.com/)
+*   [ppangman](https://www.flaticon.com/authors/ppangman) from [www.flaticon.com](https://www.flaticon.com/)
+*   [iconixar](https://www.flaticon.com/authors/iconixar) from [www.flaticon.com](https://www.flaticon.com/)
+*   [Alex.stocker](https://www.flaticon.com/authors/alexstocker) from [www.flaticon.com](https://www.flaticon.com/)
+
 [1]: https://travis-ci.org/kapitainsky/RcloneBrowser
 [2]: https://ci.appveyor.com/project/kapitainsky/RcloneBrowser
 [3]: https://github.com/kapitainsky/RcloneBrowser/releases
