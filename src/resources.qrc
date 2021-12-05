@@ -120,10 +120,10 @@
     <file>images/qbutton_icons/mkdir2.png</file>
     <file>images/qbutton_icons/mkdir2_inv.png</file>
 
-    <file>images/qbutton_icons/copy_v2</file>
-    <file>images/qbutton_icons/move_v2</file>
-    <file>images/qbutton_icons/rename_v2</file>
-    <file>images/qbutton_icons/stream_v2</file>
+    <file>images/qbutton_icons/copy_v2.png</file>
+    <file>images/qbutton_icons/move_v2.png</file>
+    <file>images/qbutton_icons/rename_v2.png</file>
+    <file>images/qbutton_icons/stream_v2.png</file>
 
     <file>images/program_icons/rclone-browser512.png</file>
 
