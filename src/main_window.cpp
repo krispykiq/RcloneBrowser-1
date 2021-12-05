@@ -502,41 +502,33 @@ MainWindow::MainWindow() {
         ui.buttonUpQueue->setMinimumWidth(button_width);
         ui.buttonStartScheduler->setMinimumWidth(button_width);
         ui.buttonStopScheduler->setMinimumWidth(button_width);
-
       } else {
-          // button style - icononly
-          ui.actionRefresh->setIcon(
-              QIcon(":media/images/qbutton_icons/refresh" + img_add + ".png"));
-          ui.actionOpen->setIcon(
-              QIcon(":media/images/qbutton_icons/open_remote" + img_add + ".png"));
+        if (buttonStyle == "icononly2") {
+          // button style - icononly2
+          QStyle *style = QApplication::style();
+          ui.actionRefresh->setIcon(style->standardIcon(QStyle::SP_BrowserReload));
+          ui.actionOpen->setIcon(style->standardIcon(QStyle::SP_DialogOpenButton));
+
           ui.actionConfig->setIcon(
-              QIcon(":media/images/qbutton_icons/rclone_config" + img_add + ".png"));
-          // Preferences button action is triggered via slot defined in ui file
-          // as we dont want pref icon in the menu
+            QIcon(":media/images/qbutton_icons/rclone_config" + img_add + ".png"));
           ui.buttonPrefs->setIcon(
               QIcon(":media/images/qbutton_icons/preferences" + img_add + ".png"));
 
-          ui.actionStopAllTransfers->setIcon(
-              QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
-          ui.actionCleanNotRunning->setIcon(
-              QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
+          ui.actionDryRun->setIcon(style->standardIcon(QStyle::SP_CommandLink));
+          ui.actionRun->setIcon(style->standardIcon(QStyle::SP_CommandLink));
+          ui.actionEdit->setIcon(style->standardIcon(QStyle::SP_FileIcon));
+          ui.actionDelete->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
+          ui.actionStartQueue->setIcon(style->standardIcon(QStyle::SP_ArrowForward));
+          ui.actionStopQueue->setIcon(style->standardIcon(QStyle::SP_BrowserStop));
+
+          ui.actionStopAllTransfers->setIcon(style->standardIcon(QStyle::SP_MediaStop));
+          ui.actionCleanNotRunning->setIcon(style->standardIcon(QStyle::SP_DialogDiscardButton));
+
           // triggered via slot so button text can be different than action menu
           ui.buttonSortByTime->setIcon(
               QIcon(":media/images/qbutton_icons/sortTimeZA" + img_add + ".png"));
           ui.buttonSortByStatus->setIcon(
               QIcon(":media/images/qbutton_icons/sortZA" + img_add + ".png"));
-
-          ui.actionDryRun->setIcon(
-              QIcon(":media/images/qbutton_icons/dryrun" + img_add + ".png"));
-          ui.actionRun->setIcon(
-              QIcon(":media/images/qbutton_icons/run" + img_add + ".png"));
-          ui.actionEdit->setIcon(
-              QIcon(":media/images/qbutton_icons/edit" + img_add + ".png"));
-          ui.actionDelete->setIcon(
-              QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
-          ui.actionStop->setIcon(
-              QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
-
           // triggered via slot so button text can be different than action menu
           ui.buttonAddToQueue->setIcon(
               QIcon(":media/images/qbutton_icons/addtoqueue" + img_add + ".png"));
@@ -547,23 +539,15 @@ MainWindow::MainWindow() {
           ui.actionAddToScheduler->setIcon(
               QIcon(":media/images/qbutton_icons/addtoscheduler" + img_add + ".png"));
 
-          ui.actionStartQueue->setIcon(
-              QIcon(":media/images/qbutton_icons/run" + img_add + ".png"));
-          ui.actionStopQueue->setIcon(
-              QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
-          ui.actionPurgeQueue->setIcon(
-              QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
-          ui.actionRemoveFromQueue->setIcon(
-              QIcon(":media/images/qbutton_icons/removefromqueue" + img_add + ".png"));
-          ui.actionUpQueue->setIcon(
-              QIcon(":media/images/qbutton_icons/vuparrow" + img_add + ".png"));
-          ui.actionDownQueue->setIcon(
-              QIcon(":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
+          ui.actionStartQueue->setIcon(style->standardIcon(QStyle::SP_ArrowForward));
+          ui.actionStopQueue->setIcon(style->standardIcon(QStyle::SP_MediaStop));
+          ui.actionPurgeQueue->setIcon(style->standardIcon(QStyle::SP_DialogDiscardButton));
+          ui.actionRemoveFromQueue->setIcon(style->standardIcon(QStyle::SP_DialogCancelButton));
+          ui.actionUpQueue->setIcon(style->standardIcon(QStyle::SP_ArrowUp));
+          ui.actionDownQueue->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
 
-          ui.actionStartScheduler->setIcon(
-              QIcon(":media/images/qbutton_icons/run" + img_add + ".png"));
-          ui.actionStopScheduler->setIcon(
-              QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
+          ui.actionStartScheduler->setIcon(style->standardIcon(QStyle::SP_MediaPlay));
+          ui.actionStopScheduler->setIcon(style->standardIcon(QStyle::SP_MediaStop));
 
           ui.buttonDryrunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
           ui.buttonDryrunTask->setIconSize(QSize(icon_w, icon_h));
@@ -613,6 +597,118 @@ MainWindow::MainWindow() {
           ui.buttonSortByTime->setIconSize(QSize(icon_w, icon_h));
           ui.buttonSortByStatus->setToolButtonStyle(Qt::ToolButtonIconOnly);
           ui.buttonSortByStatus->setIconSize(QSize(icon_w, icon_h));
+          
+        } else {
+            // button style - icononly
+            ui.actionRefresh->setIcon(
+                QIcon(":media/images/qbutton_icons/refresh" + img_add + ".png"));
+            ui.actionOpen->setIcon(
+                QIcon(":media/images/qbutton_icons/open_remote" + img_add + ".png"));
+            ui.actionConfig->setIcon(
+                QIcon(":media/images/qbutton_icons/rclone_config" + img_add + ".png"));
+            // Preferences button action is triggered via slot defined in ui file
+            // as we dont want pref icon in the menu
+            ui.buttonPrefs->setIcon(
+                QIcon(":media/images/qbutton_icons/preferences" + img_add + ".png"));
+
+            ui.actionStopAllTransfers->setIcon(
+                QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
+            ui.actionCleanNotRunning->setIcon(
+                QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
+            // triggered via slot so button text can be different than action menu
+            ui.buttonSortByTime->setIcon(
+                QIcon(":media/images/qbutton_icons/sortTimeZA" + img_add + ".png"));
+            ui.buttonSortByStatus->setIcon(
+                QIcon(":media/images/qbutton_icons/sortZA" + img_add + ".png"));
+
+            ui.actionDryRun->setIcon(
+                QIcon(":media/images/qbutton_icons/dryrun" + img_add + ".png"));
+            ui.actionRun->setIcon(
+                QIcon(":media/images/qbutton_icons/run" + img_add + ".png"));
+            ui.actionEdit->setIcon(
+                QIcon(":media/images/qbutton_icons/edit" + img_add + ".png"));
+            ui.actionDelete->setIcon(
+                QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
+            ui.actionStop->setIcon(
+                QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
+
+            // triggered via slot so button text can be different than action menu
+            ui.buttonAddToQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/addtoqueue" + img_add + ".png"));
+            ui.actionAddToQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/addtoqueue" + img_add + ".png"));
+            ui.buttonAddToScheduler->setIcon(
+                QIcon(":media/images/qbutton_icons/addtoscheduler" + img_add + ".png"));
+            ui.actionAddToScheduler->setIcon(
+                QIcon(":media/images/qbutton_icons/addtoscheduler" + img_add + ".png"));
+
+            ui.actionStartQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/run" + img_add + ".png"));
+            ui.actionStopQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
+            ui.actionPurgeQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/purge" + img_add + ".png"));
+            ui.actionRemoveFromQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/removefromqueue" + img_add + ".png"));
+            ui.actionUpQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/vuparrow" + img_add + ".png"));
+            ui.actionDownQueue->setIcon(
+                QIcon(":media/images/qbutton_icons/vdownarrow" + img_add + ".png"));
+
+            ui.actionStartScheduler->setIcon(
+                QIcon(":media/images/qbutton_icons/run" + img_add + ".png"));
+            ui.actionStopScheduler->setIcon(
+                QIcon(":media/images/qbutton_icons/stop" + img_add + ".png"));
+
+            ui.buttonDryrunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonDryrunTask->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonRunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonRunTask->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonEditTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonEditTask->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonDeleteTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonDeleteTask->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonSortTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonSortTask->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonPrefs->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonPrefs->setIconSize(QSize(icon_w, icon_h));
+            ui.refresh->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.refresh->setIconSize(QSize(icon_w, icon_h));
+            ui.open->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.open->setIconSize(QSize(icon_w, icon_h));
+            ui.config->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.config->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStopAllJobs->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStopAllJobs->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonCleanNotRunning->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonCleanNotRunning->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonAddToQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonAddToQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStartQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStartQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStopQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStopQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonPurgeQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonPurgeQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonRemoveFromQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonRemoveFromQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonDownQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonDownQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonUpQueue->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonUpQueue->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStop->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStop->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonAddToScheduler->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonAddToScheduler->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStopScheduler->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStopScheduler->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonStartScheduler->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonStartScheduler->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonSortByTime->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonSortByTime->setIconSize(QSize(icon_w, icon_h));
+            ui.buttonSortByStatus->setToolButtonStyle(Qt::ToolButtonIconOnly);
+            ui.buttonSortByStatus->setIconSize(QSize(icon_w, icon_h));
+        }
       }
     }
   }
