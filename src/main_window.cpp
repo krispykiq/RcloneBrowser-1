@@ -709,6 +709,7 @@ MainWindow::MainWindow() {
             ui.buttonSortByTime->setIconSize(QSize(icon_w, icon_h));
             ui.buttonSortByStatus->setToolButtonStyle(Qt::ToolButtonIconOnly);
             ui.buttonSortByStatus->setIconSize(QSize(icon_w, icon_h));
+        }
       }
     }
   }

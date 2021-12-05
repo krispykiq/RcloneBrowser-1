@@ -34,7 +34,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) : QDialog(parent) {
   ui.cb_icononly->setToolTip(
       tr("<img src=':media/images/tooltips/icononly.png'>"));
   ui.cb_icononly2->setToolTip(
-    tr("<img src=':media/images/tooltips/icononly.png'>"));
+      tr("<img src=':media/images/tooltips/icononly.png'>"));
   ui.cb_textonly->setToolTip(
       tr("<img src=':media/images/tooltips/textonly.png'>"));
   ui.cb_textcon->setToolTip(
@@ -307,6 +307,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) : QDialog(parent) {
           ui.cb_icononly2->setChecked(true);
         } else {
             ui.cb_textandicon->setChecked(true);
+        }
       }
     }
   }
