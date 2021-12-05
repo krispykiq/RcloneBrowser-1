@@ -288,13 +288,13 @@ RemoteWidget::RemoteWidget(IconCache *iconCache, const QString &remote,
       } else {
         if (buttonStyle == "icononly2") {
           ui.copy->setIcon(
-              QIcon(":media/images/qbutton_icons/copy" + "_v2" + ".png"));
+              QIcon(":media/images/qbutton_icons/copy_v2.png"));
           ui.move->setIcon(
-              QIcon(":media/images/qbutton_icons/move" + "_v2" + ".png")); 
+              QIcon(":media/images/qbutton_icons/move_v2.png")); 
           ui.rename->setIcon(
-              QIcon(":media/images/qbutton_icons/rename" + "_v2" +".png")); 
+              QIcon(":media/images/qbutton_icons/rename_v2.png")); 
           ui.stream->setIcon(
-              QIcon(":media/images/qbutton_icons/stream" + "_v2" + ".png")); 
+              QIcon(":media/images/qbutton_icons/stream_v2.png")); 
               
           QStyle *style = QApplication::style();
           ui.refresh->setIcon(style->standardIcon(QStyle::SP_BrowserReload));
