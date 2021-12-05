@@ -591,7 +591,11 @@ QString PreferencesDialog::getButtonStyle() const {
       if (ui.cb_textcon->isChecked()) {
         return "textcon";
       } else {
-          return "textonly";
+        if (ui.cb_icononly2->isChecked()) {
+          return "icononly2";
+        } else {
+            return "textonly";
+        }
       }
     }
   }
