@@ -318,8 +318,8 @@ MainWindow::MainWindow() {
       ui.buttonDeleteTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
       ui.buttonEditTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
       ui.buttonRunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
-      mUploadIcon = setToolButtonStyle(Qt::ToolButtonIconOnly);
-      mDownloadIcon = setToolButtonStyle(Qt::ToolButtonIconOnly);
+      mUploadIcon = (Qt::ToolButtonIconOnly);
+      mDownloadIcon = (Qt::ToolButtonIconOnly);
 
     
     
