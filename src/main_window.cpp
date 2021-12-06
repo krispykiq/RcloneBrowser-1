@@ -295,9 +295,11 @@ MainWindow::MainWindow() {
                    &MainWindow::listTasks);
                    
 
-  bool iconOnly2 = settings->value("Settings/iconOnly2").toBool();
+                   
+  bool iconOnly2Ini = settings->value("Settings/iconOnly2Ini").toBool();
 
-  if (iconOnly2) {
+
+  if (iconOnly2Ini) {
       QStyle *style = QApplication::style();
       ui.buttonDeleteTask->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
       ui.buttonEditTask->setIcon(style->standardIcon(QStyle::SP_FileIcon));
