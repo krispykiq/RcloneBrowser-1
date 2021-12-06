@@ -314,12 +314,15 @@ MainWindow::MainWindow() {
       ui.tabs->tabBar()->setTabButton(2, QTabBar::RightSide, nullptr);
       ui.tabs->tabBar()->setTabButton(2, QTabBar::LeftSide, nullptr);
       ui.tabs->setCurrentIndex(0);
+
+      ui.mUploadIcon->setDefaultAction(mUploadIcon);
+      ui.mDownloadIcon->setDefaultAction(mDownloadIcon);
     
-      // ui.buttonDeleteTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
-      // ui.buttonEditTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
-      // ui.buttonRunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
-      // mUploadIcon = setToolButtonStyle(Qt::ToolButtonIconOnly);
-      // mDownloadIcon = setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonDeleteTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonEditTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonRunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.mUploadIcon = setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.mDownloadIcon = setToolButtonStyle(Qt::ToolButtonIconOnly);
 
     
     
