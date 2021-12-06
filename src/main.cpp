@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
   };
 
   if (!(settings->contains("Settings/iconOnly2Ini"))) {
-    // if darkModeIni does not exist create new key
+    // if iconOnly2Ini does not exist create new key
     settings->setValue("Settings/iconOnly2Ini", "false");
   };
 
@@ -72,6 +72,11 @@ int main(int argc, char *argv[]) {
   if (!(settings->contains("Settings/darkMode"))) {
     // if darkMode does not exist create new key
     settings->setValue("Settings/darkMode", "false");
+  };
+
+  if (!(settings->contains("Settings/iconOnly2"))) {
+    // if iconOnly2 does not exist create new key
+    settings->setValue("Settings/iconOnly2", "false");
   };
 
   bool darkMode = settings->value("Settings/darkMode").toBool();
