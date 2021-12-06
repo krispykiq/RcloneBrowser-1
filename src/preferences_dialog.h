@@ -32,6 +32,7 @@ public:
   bool getRowColors() const;
   bool getShowHidden() const;
   bool getDarkMode() const;
+  bool getIconOnly2() const;
   QString getIconSize() const;
 
   bool getUseProxy() const;

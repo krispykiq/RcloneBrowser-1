@@ -30,38 +30,63 @@ QString root = isLocal ? "/" : QString();
     ui.checkBoxShared->hide();
   }
 
-  QStyle *style = QApplication::style();
-  ui.refresh->setIcon(style->standardIcon(QStyle::SP_BrowserReload));
-  ui.mkdir->setIcon(style->standardIcon(QStyle::SP_FileDialogNewFolder));
-  ui.rename->setIcon(style->standardIcon(QStyle::SP_FileIcon));
-  ui.move->setIcon(style->standardIcon(QStyle::SP_DirOpenIcon));
-  ui.purge->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
-  ui.mount->setIcon(style->standardIcon(QStyle::SP_DriveNetIcon));
-  ui.stream->setIcon(style->standardIcon(QStyle::SP_MediaPlay));
-  ui.upload->setIcon(style->standardIcon(QStyle::SP_ArrowUp));
-  ui.download->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
-  ui.download->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
-  ui.getSize->setIcon(style->standardIcon(QStyle::SP_FileDialogInfoView));
-  ui.getTree->setIcon(style->standardIcon(QStyle::SP_FileDialogListView));
-  ui.export_->setIcon(style->standardIcon(QStyle::SP_FileDialogDetailedView));
-  ui.link->setIcon(style->standardIcon(QStyle::SP_FileLinkIcon));
 
-  ui.buttonRefresh->setDefaultAction(ui.refresh);
-  ui.buttonMkdir->setDefaultAction(ui.mkdir);
-  ui.buttonRename->setDefaultAction(ui.rename);
-  ui.buttonMove->setDefaultAction(ui.move);
-  ui.buttonPurge->setDefaultAction(ui.purge);
-  ui.buttonMount->setDefaultAction(ui.mount);
-  ui.buttonStream->setDefaultAction(ui.stream);
-  ui.buttonUpload->setDefaultAction(ui.upload);
-  ui.buttonDownload->setDefaultAction(ui.download);
-  ui.buttonTree->setDefaultAction(ui.getTree);
-  ui.buttonLink->setDefaultAction(ui.link);
-  ui.buttonSize->setDefaultAction(ui.getSize);
-  ui.buttonExport->setDefaultAction(ui.export_);
+  bool iconOnly2 = settings->value("Settings/iconOnly2").toBool();
 
-  ui.tree->sortByColumn(0, Qt::AscendingOrder);
-  ui.tree->header()->setSectionsMovable(false);
+  if (iconOnly2) {
+
+
+  } else {
+      QStyle *style = QApplication::style();
+      ui.refresh->setIcon(style->standardIcon(QStyle::SP_BrowserReload));
+      ui.mkdir->setIcon(style->standardIcon(QStyle::SP_FileDialogNewFolder));
+      ui.rename->setIcon(style->standardIcon(QStyle::SP_FileIcon));
+      ui.move->setIcon(style->standardIcon(QStyle::SP_DirOpenIcon));
+      ui.purge->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
+      ui.mount->setIcon(style->standardIcon(QStyle::SP_DriveNetIcon));
+      ui.stream->setIcon(style->standardIcon(QStyle::SP_MediaPlay));
+      ui.upload->setIcon(style->standardIcon(QStyle::SP_ArrowUp));
+      ui.download->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
+      ui.download->setIcon(style->standardIcon(QStyle::SP_ArrowDown));
+      ui.getSize->setIcon(style->standardIcon(QStyle::SP_FileDialogInfoView));
+      ui.getTree->setIcon(style->standardIcon(QStyle::SP_FileDialogListView));
+      ui.export_->setIcon(style->standardIcon(QStyle::SP_FileDialogDetailedView));
+      ui.link->setIcon(style->standardIcon(QStyle::SP_FileLinkIcon));
+
+      ui.buttonRefresh->setDefaultAction(ui.refresh);
+      ui.buttonMkdir->setDefaultAction(ui.mkdir);
+      ui.buttonRename->setDefaultAction(ui.rename);
+      ui.buttonMove->setDefaultAction(ui.move);
+      ui.buttonPurge->setDefaultAction(ui.purge);
+      ui.buttonMount->setDefaultAction(ui.mount);
+      ui.buttonStream->setDefaultAction(ui.stream);
+      ui.buttonUpload->setDefaultAction(ui.upload);
+      ui.buttonDownload->setDefaultAction(ui.download);
+      ui.buttonTree->setDefaultAction(ui.getTree);
+      ui.buttonLink->setDefaultAction(ui.link);
+      ui.buttonSize->setDefaultAction(ui.getSize);
+      ui.buttonExport->setDefaultAction(ui.export_);
+
+      ui.tree->sortByColumn(0, Qt::AscendingOrder);
+      ui.tree->header()->setSectionsMovable(false);
+
+      ui.buttonRefresh->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonMkdir->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonRename->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonMove->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonPurge->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonMount->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonStream->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonUpload->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonDownload->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonTree->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonLink->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonSize->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonExport->setToolButtonStyle(Qt::ToolButtonIconOnly);
+
+  }
+
+
 
   ItemModel *model = new ItemModel(iconCache, remote, this);
   ui.tree->setModel(model);

@@ -178,6 +178,7 @@ MainWindow::MainWindow() {
       settings->setValue("Settings/rowColors", dialog.getRowColors());
       settings->setValue("Settings/showHidden", dialog.getShowHidden());
       settings->setValue("Settings/darkMode", dialog.getDarkMode());
+      settings->setValue("Settings/iconOnly2", dialog.getIconOnly2());
       settings->setValue("Settings/iconSize", dialog.getIconSize().trimmed());
 
       settings->setValue("Settings/useProxy", dialog.getUseProxy());
@@ -292,21 +293,52 @@ MainWindow::MainWindow() {
   QObject::connect(ListOfJobOptions::getInstance(),
                    &ListOfJobOptions::tasksListUpdated, this,
                    &MainWindow::listTasks);
+                   
 
-  QStyle *style = QApplication::style();
-  ui.buttonDeleteTask->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
-  ui.buttonEditTask->setIcon(style->standardIcon(QStyle::SP_FileIcon));
-  ui.buttonRunTask->setIcon(style->standardIcon(QStyle::SP_CommandLink));
-  mUploadIcon = style->standardIcon(QStyle::SP_ArrowUp);
-  mDownloadIcon = style->standardIcon(QStyle::SP_ArrowDown);
+  bool iconOnly2 = settings->value("Settings/iconOnly2").toBool();
 
-  ui.tabs->tabBar()->setTabButton(0, QTabBar::RightSide, nullptr);
-  ui.tabs->tabBar()->setTabButton(0, QTabBar::LeftSide, nullptr);
-  ui.tabs->tabBar()->setTabButton(1, QTabBar::RightSide, nullptr);
-  ui.tabs->tabBar()->setTabButton(1, QTabBar::LeftSide, nullptr);
-  ui.tabs->tabBar()->setTabButton(2, QTabBar::RightSide, nullptr);
-  ui.tabs->tabBar()->setTabButton(2, QTabBar::LeftSide, nullptr);
-  ui.tabs->setCurrentIndex(0);
+  if (iconOnly2) {
+      QStyle *style = QApplication::style();
+      ui.buttonDeleteTask->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
+      ui.buttonEditTask->setIcon(style->standardIcon(QStyle::SP_FileIcon));
+      ui.buttonRunTask->setIcon(style->standardIcon(QStyle::SP_CommandLink));
+      mUploadIcon = style->standardIcon(QStyle::SP_ArrowUp);
+      mDownloadIcon = style->standardIcon(QStyle::SP_ArrowDown);
+
+      ui.tabs->tabBar()->setTabButton(0, QTabBar::RightSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(0, QTabBar::LeftSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(1, QTabBar::RightSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(1, QTabBar::LeftSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(2, QTabBar::RightSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(2, QTabBar::LeftSide, nullptr);
+      ui.tabs->setCurrentIndex(0);
+    
+      ui.buttonDeleteTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonEditTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      ui.buttonRunTask->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      mUploadIcon->setToolButtonStyle(Qt::ToolButtonIconOnly);
+      mDownloadIcon->setToolButtonStyle(Qt::ToolButtonIconOnly);
+
+    
+    
+  } else {
+      QStyle *style = QApplication::style();
+      ui.buttonDeleteTask->setIcon(style->standardIcon(QStyle::SP_TrashIcon));
+      ui.buttonEditTask->setIcon(style->standardIcon(QStyle::SP_FileIcon));
+      ui.buttonRunTask->setIcon(style->standardIcon(QStyle::SP_CommandLink));
+      mUploadIcon = style->standardIcon(QStyle::SP_ArrowUp);
+      mDownloadIcon = style->standardIcon(QStyle::SP_ArrowDown);
+
+      ui.tabs->tabBar()->setTabButton(0, QTabBar::RightSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(0, QTabBar::LeftSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(1, QTabBar::RightSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(1, QTabBar::LeftSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(2, QTabBar::RightSide, nullptr);
+      ui.tabs->tabBar()->setTabButton(2, QTabBar::LeftSide, nullptr);
+      ui.tabs->setCurrentIndex(0);
+    
+  }
+
 
   listTasks();
 
@@ -859,6 +891,7 @@ void MainWindow::rcloneListRemotes() {
               lightModeiconScale = 18;
               darkModeIconScale = 15;
             }
+
             
 #if !defined(Q_OS_MACOS)
             // _inv only for dark mode
