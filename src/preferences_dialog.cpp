@@ -123,7 +123,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent) : QDialog(parent) {
   ui.showHidden->setChecked(
       settings->value("Settings/showHidden", true).toBool());
   ui.darkMode->setChecked(settings->value("Settings/darkMode", true).toBool());
-  ui.icononly2->setChecked(settings->value("Settings/iconOnly2", true).toBool());
+  ui.iconOnly2->setChecked(settings->value("Settings/iconOnly2", true).toBool());
 
 // dark mode option for all systems but latest macOS
 // on macOS Mojave or newer dark mode is managed by OS
@@ -257,7 +257,7 @@ bool PreferencesDialog::getShowHidden() const {
 
 bool PreferencesDialog::getDarkMode() const { return ui.darkMode->isChecked(); }
 
-bool PreferencesDialog::getIconOnly2() const { return ui.icononly2->isChecked(); }
+bool PreferencesDialog::getIconOnly2() const { return ui.iconOnly2->isChecked(); }
 
 
 QString PreferencesDialog::getIconSize() const {

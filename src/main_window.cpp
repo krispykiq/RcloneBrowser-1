@@ -295,7 +295,7 @@ MainWindow::MainWindow() {
                    &MainWindow::listTasks);
                    
 
-                   
+
   bool iconOnly2Ini = settings->value("Settings/iconOnly2Ini").toBool();
 
 
